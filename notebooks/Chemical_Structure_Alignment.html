@@ -1,31 +1,29 @@
+
+
 <!DOCTYPE html>
 <html class="writer-html5" lang="python" data-content_root="../">
 <head>
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Chemical Structure Alignment &mdash; Procrustes 1.0.2a2 documentation</title>
-      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
-      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
-      <link rel="stylesheet" type="text/css" href="../_static/graphviz.css?v=fd3f3429" />
+  <title>Chemical Structure Alignment &mdash; Procrustes 1.1.0alpha documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../_static/graphviz.css?v=4ae1632d" />
       <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
       <link rel="stylesheet" type="text/css" href="../_static/nbsphinx-code-cells.css?v=2aa19091" />
 
   
-  <!--[if lt IE 9]>
-    <script src="../_static/js/html5shiv.min.js"></script>
-  <![endif]-->
-  
-        <script src="../_static/jquery.js?v=5d32c60e"></script>
-        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script src="../_static/documentation_options.js?v=195c3181"></script>
-        <script src="../_static/doctools.js?v=9a2dae69"></script>
-        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
-        <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
-        <script src="../_static/copybutton.js?v=f281be69"></script>
-        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-        <script type="text/x-mathjax-config">MathJax.Hub.Config({"TeX": {"equationNumbers": {"autoNumber": "AMS", "useLabelIds": true}}, "tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "tex2jax_ignore|mathjax_ignore|document", "processClass": "tex2jax_process|mathjax_process|math|output_area"}})</script>
-        <script async="async" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=c1a5bf9c"></script>
+      <script src="../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="../_static/copybutton.js?v=f281be69"></script>
+      <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+      <script type="text/x-mathjax-config">MathJax.Hub.Config({"TeX": {"equationNumbers": {"autoNumber": "AMS", "useLabelIds": true}}, "tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "tex2jax_ignore|mathjax_ignore|document", "processClass": "tex2jax_process|mathjax_process|math|output_area"}})</script>
+      <script async="async" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -44,9 +42,6 @@
           <a href="../index.html" class="icon icon-home">
             Procrustes
           </a>
-              <div class="version">
-                1.0.2
-              </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
@@ -117,7 +112,7 @@
 </div></blockquote>
 <p>In the code block below, we use the <code class="docutils literal notranslate"><span class="pre">procrustes</span></code> library for protein structure alignment. We use the 2HHB, which has cyclic-<span class="math notranslate nohighlight">\(C_2\)</span> global symmetry, and load its PDB file using <a class="reference external" href="https://github.com/theochem/iodata">IOData library</a> to obtain the 3D-Cartesian coordinates atoms. In 2HHB, the A and C (or B and D) are hemoglobin deoxy-alpha (beta) chains shown in <strong>Fig. (i)</strong>, and their <span class="math notranslate nohighlight">\(C_{\alpha}\)</span> atoms in <strong>Fig. (ii)</strong> are aligned in <strong>Fig. (iii)</strong> to show that they are homologous.
 The results in <strong>Fig. (iii)</strong> are obtained with orthogonal Procrustes which implements the <em>Kabsch</em> algorithm. The root-mean-square deviation (RMSD) is used to assess the discrepancy between structures before and after the translation-rotation transformation.</p>
-<p><img alt="Fig. 1. protein structure alignment with rotational Procrustes." src="../_images/protein_alignment.png" /></p>
+<img alt="Fig. 1. protein structure alignment with rotational Procrustes." src="../_images/protein_alignment.png" />
 <section id="Download-IOData-&amp;-Matplotlib-Libraries-&amp;-Example-Files">
 <h2>Download IOData &amp; Matplotlib Libraries &amp; Example Files<a class="headerlink" href="#Download-IOData-&-Matplotlib-Libraries-&-Example-Files" title="Link to this heading"></a></h2>
 <ul class="simple">
@@ -130,7 +125,7 @@ The results in <strong>Fig. (iii)</strong> are obtained with orthogonal Procrust
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># If needed, install IOData library (this is required on Binder)</span>
 
-<span class="kn">import</span> <span class="nn">sys</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">sys</span>
 
 <span class="c1"># See https://jakevdp.github.io/blog/2017/12/05/installing-python-packages-from-jupyter/</span>
 <span class="o">!{</span>sys.executable<span class="o">}</span><span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>qc-iodata
@@ -143,8 +138,8 @@ The results in <strong>Fig. (iii)</strong> are obtained with orthogonal Procrust
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># If needed, download the example files</span>
-<span class="kn">import</span> <span class="nn">os</span>
-<span class="kn">from</span> <span class="nn">urllib.request</span> <span class="kn">import</span> <span class="n">urlretrieve</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">urllib.request</span><span class="w"> </span><span class="kn">import</span> <span class="n">urlretrieve</span>
 
 <span class="n">fpath</span> <span class="o">=</span> <span class="s2">&quot;notebook_data/chemical_strcuture_alignment/&quot;</span>
 <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">fpath</span><span class="p">):</span>
@@ -165,12 +160,12 @@ The results in <strong>Fig. (iii)</strong> are obtained with orthogonal Procrust
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># chemical structure alignment with orthogonal Procrustes</span>
-<span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>
 
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">from</span> <span class="nn">iodata</span> <span class="kn">import</span> <span class="n">load_one</span>
-<span class="kn">from</span> <span class="nn">iodata.utils</span> <span class="kn">import</span> <span class="n">angstrom</span>
-<span class="kn">from</span> <span class="nn">procrustes</span> <span class="kn">import</span> <span class="n">rotational</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">iodata</span><span class="w"> </span><span class="kn">import</span> <span class="n">load_one</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">iodata.utils</span><span class="w"> </span><span class="kn">import</span> <span class="n">angstrom</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">procrustes</span><span class="w"> </span><span class="kn">import</span> <span class="n">rotational</span>
 
 <span class="c1"># load PDB</span>
 <span class="n">pdb</span> <span class="o">=</span> <span class="n">load_one</span><span class="p">(</span><span class="n">Path</span><span class="p">(</span><span class="s2">&quot;notebook_data/chemical_strcuture_alignment/2hhb.pdb&quot;</span><span class="p">))</span>
@@ -217,7 +212,7 @@ RMSD of transformed coordinates: 0.23003870483785113
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plot outputs of Procrustes</span>
 
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
 
 <span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
 
